@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/admin/jobs/mark-overdue",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/admin/jobs/expire-subscriptions",
+      "schedule": "30 1 * * *"
+    },
+    {
+      "path": "/api/admin/jobs/finalize-deletions",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}
