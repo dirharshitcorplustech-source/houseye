@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 import { getCurrentUser } from '@/lib/auth/get-session';
 import { createMaintenanceRequest } from '@/services/maintenance/create';
 import { connectDB } from '@/lib/db/connect';
-import { MaintenanceRequest } from '@/models/MaintenanceRequest';
+import MaintenanceRequest from '@/models/MaintenanceRequest';
 import { successResponse, Errors } from '@/lib/utils/response';
 import { isSuperAdmin } from '@/services/authorization';
 

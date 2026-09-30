@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { getCurrentUser } from '@/lib/auth/get-session';
 import { connectDB } from '@/lib/db/connect';
-import { MaintenanceRequest, MAINTENANCE_CATEGORIES } from '@/models/MaintenanceRequest';
+import MaintenanceRequest, { MAINTENANCE_CATEGORIES } from '@/models/MaintenanceRequest';
 import { LogoutButton } from '@/components/auth/LogoutButton';
 import { SubmitMaintenanceForm } from '@/components/forms/SubmitMaintenanceForm';
 
