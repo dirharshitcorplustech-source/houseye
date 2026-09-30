@@ -4,8 +4,7 @@
  */
 
 import { connectDB } from '@/lib/db/connect';
-import {
-  MaintenanceRequest,
+import MaintenanceRequest, {
   determinePriority,
   MAINTENANCE_CATEGORIES,
 } from '@/models/MaintenanceRequest';

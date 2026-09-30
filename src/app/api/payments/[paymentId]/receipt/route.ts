@@ -77,7 +77,7 @@ export async function GET(
       ).toLocaleString('en-IN')}`,
     ];
     const pdf = textToPdf(lines);
-    return new Response(pdf, {
+    return new Response(Buffer.from(pdf), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
