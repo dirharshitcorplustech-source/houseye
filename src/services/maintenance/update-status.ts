@@ -5,7 +5,7 @@
  */
 
 import { connectDB } from '@/lib/db/connect';
-import { MaintenanceRequest } from '@/models/MaintenanceRequest';
+import MaintenanceRequest from '@/models/MaintenanceRequest';
 import { Account } from '@/models';
 import { CurrentUser } from '@/lib/auth/get-session';
 import {
