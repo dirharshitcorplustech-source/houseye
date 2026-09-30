@@ -139,7 +139,7 @@ export async function activateSubscription(
     end.setMonth(end.getMonth() + 1);
   }
 
-  const lines = [
+  const lines: Array<{ description: string; amount: number; quantity: number }> = [
     {
       description: `${PLAN_NAMES[input.planId]} plan (${input.cycle})`,
       amount: baseAmount,
