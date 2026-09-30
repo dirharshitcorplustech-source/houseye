@@ -52,7 +52,7 @@ export const EVENT_CATEGORIES = {
 } as const;
 
 /** Mandatory — user cannot fully disable */
-export const MANDATORY_TYPES = new Set([
+export const MANDATORY_TYPES = new Set<string>([
   NOTIFICATION_TYPES.SECURITY_ALERT,
   NOTIFICATION_TYPES.INVITATION,
 ]);
