@@ -19,7 +19,7 @@ export function rateLimit(
   if (!entry || entry.resetAt <= now) {
     entry = { count: 0, resetAt: now + windowMs };
     buckets.set(key, entry);
-  });
+  }
 
   entry.count += 1;
 
@@ -29,7 +29,7 @@ export function rateLimit(
       remaining: 0,
       retryAfterSec: Math.ceil((entry.resetAt - now) / 1000),
     };
-  });
+  }
 
   return {
     allowed: true,
