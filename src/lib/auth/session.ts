@@ -11,7 +11,7 @@ const JWT_SECRET = new TextEncoder().encode(
   process.env.JWT_SECRET || process.env.AUTH_SECRET || 'dev-secret-change-me'
 );
 
-const SESSION_MAX_AGE = Number(process.env.SESSION_MAX_AGE) || 30 * 24 * 60 * 60; // 30 days
+export const SESSION_MAX_AGE = Number(process.env.SESSION_MAX_AGE) || 30 * 24 * 60 * 60; // 30 days
 
 export function createSessionId(): string {
   return nanoid(32);

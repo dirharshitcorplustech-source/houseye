@@ -86,7 +86,7 @@ export default async function PropertiesPage() {
                   <div className="text-sm text-slate-500 mt-1">
                     {(p.propertyType as string)?.replace('_', ' ')}
                   </div>
-                  {p.address && (
+                  {(p.address as { city?: string } | null | undefined) && (
                     <div className="text-xs text-slate-400 mt-2">
                       {(p.address as { city?: string }).city || '—'}
                     </div>
