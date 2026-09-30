@@ -49,8 +49,8 @@ export async function dispatchNotification(
   );
 
   // Load preference if recipient known
-  let prefs: Record<string, { email?: boolean; sms?: boolean; whatsapp?: boolean; inApp?: boolean }> | null =
-    null;
+  type PreferenceMap = Record<string, { email?: boolean; sms?: boolean; whatsapp?: boolean; inApp?: boolean }>;
+  let prefs: PreferenceMap | null = null;
   if (input.recipientUserId) {
     const prefDoc = await NotificationPreference.findOne({
       userId: input.recipientUserId,
@@ -58,9 +58,9 @@ export async function dispatchNotification(
     if (prefDoc?.preferences) {
       const raw = prefDoc.preferences as Map<string, unknown> | Record<string, unknown>;
       if (raw instanceof Map) {
-        prefs = Object.fromEntries(raw.entries()) as typeof prefs;
+        prefs = Object.fromEntries(raw.entries()) as PreferenceMap;
       } else {
-        prefs = raw as typeof prefs;
+        prefs = raw as PreferenceMap;
       }
     }
   }
